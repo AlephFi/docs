@@ -4,7 +4,7 @@
 
 Aleph Vaults are designed with built-in safety mechanisms that allow managers and guardians to pause (disable) or unpause (enable) specific functions. This provides fine-grained control over vault activity and effective resolution of unexpected issues
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/safeguards-architecture.png" alt=""><figcaption></figcaption></figure>
 
 #### Purpose and Roles
 

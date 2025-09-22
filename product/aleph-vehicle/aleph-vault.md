@@ -4,7 +4,7 @@
 
 Aleph Vault tokenizes off-chain yield strategies into asynchronous vaults, deriving their value from the underlying NAV. The system simplifies complex operations for managers and allocators, handles whitelisting, subscriptions, Classes and Series, HWM, fee accrual, and capital distribution.
 
-<figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/aleph-vault-architecture.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -36,7 +36,7 @@ Allocators apply to access through a digital storefront that simplifies the onbo
 
 ## Flow of Funds
 
-<figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/vault-components-diagram.png" alt=""><figcaption></figcaption></figure>
 
 Aleph Vaults operate on a settlement-based system; deposits/redemptions are settled and shares are issued **after the new NAV is published**. The vault manager initiates NAV updates and settlement cycles, and the whitelisted asynchronous vault is used as the “subscription escrow”.
 

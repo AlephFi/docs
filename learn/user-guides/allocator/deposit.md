@@ -4,7 +4,7 @@ This flow allows you to deposit ERC-20 tokens into a Vault and receive Vault Sha
 
 Vault Shares are not issued immediately, they are minted after the batch is settled, typically on a monthly schedule, depending on the Vault’s configuration.
 
-<figure><img src="../../../.gitbook/assets/Request Deposit.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/deposit-request-interface.png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### Prerequisite
 

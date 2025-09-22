@@ -8,7 +8,7 @@ When allocators request a withdrawal by redeeming their shares, they receive a p
 
 Redemptions are asynchronous and follow the ERC-7540 standard, meaning tokens are transferred after NAV settlement, ensuring fair asset distribution.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (60).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/redemption-lifecycle-overview.png" alt="" width="563"><figcaption></figcaption></figure>
 
 
 
@@ -26,7 +26,7 @@ The process consists of multiple phases:
 
 Allocators initiate a redemption by specifying the portion of their holdings to redeem.
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/redemption-request-flow.png" alt="" width="563"><figcaption></figcaption></figure>
 
 1. Users call `requestRedeem` with:
    - `classId`: The share class to redeem from
@@ -38,7 +38,7 @@ Allocators initiate a redemption by specifying the portion of their holdings to 
    - Notice period: Users may need to wait a certain number of batches before redemption
    - Lock-in period: New investors may be locked for a specified number of batches
    - Minimum redemption amounts apply per class
-4. Users can track their pending redemption requests using:
+6. Users can track their pending redemption requests using:
    - `redeemRequestOf(classId, user)`: Total pending redemptions across all batches
    - `redeemRequestOfAt(classId, user, batchId)`: Redemptions for a specific batch
 
@@ -48,7 +48,7 @@ Allocators initiate a redemption by specifying the portion of their holdings to 
 
 Upon NAV settlement, the Oracle calls `settleRedeem` to finalize all pending redemptions for a specific class.
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/redemption-settlement-flow.png" alt="" width="563"><figcaption></figcaption></figure>
 
 1. Oracle calls `settleRedeem` with:
    - `classId`: The share class to settle

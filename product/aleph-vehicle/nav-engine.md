@@ -4,7 +4,7 @@
 
 The NAV Engine is a customized Oracle service responsible for calculating the Net Asset Value (NAV) of an individual manager. The system fetches raw data from trading venues, applies valuation and fee logic, and publishes results on-chain to settle deposits and redemptions.
 
-<figure><img src="../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nav-engine-architecture.png" alt=""><figcaption></figcaption></figure>
 
 The NAV Engine is designed to provide both managers and allocators with the highest standards of accuracy and auditability. Calculations are based on reconciled balances, market prices, and position valuations across multiple trading venues.&#x20;
 

@@ -4,7 +4,7 @@ The **Settle Deposit** flow is responsible for converting all pending deposit re
 
 **When:** Monthly (or as scheduled by your fund)
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/manager-settle-deposit.png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### Before You Begin
 

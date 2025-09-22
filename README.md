@@ -1,5 +1,5 @@
 ---
-cover: .gitbook/assets/4.9  Othentic Weekly .png
+cover: .gitbook/assets/aleph-cover-banner.png
 coverY: 0
 layout:
   width: default

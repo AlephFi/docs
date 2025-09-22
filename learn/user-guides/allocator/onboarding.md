@@ -4,7 +4,7 @@ Before you can invest in a Vault, you must complete a one-time onboarding proces
 
 > Onboarding is **Vault-specific**. Each Vault may have different KYC and legal requirements based on its fund structure and jurisdiction.
 
-<figure><img src="../../../.gitbook/assets/Operator Onboarding.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/allocator-onboarding-flow.png" alt="" width="563"><figcaption></figcaption></figure>
 
 {% stepper %}
 {% step %}

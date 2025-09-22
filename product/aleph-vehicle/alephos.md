@@ -6,7 +6,7 @@ AlephOS is the primary console for fund managers and admins of an Aleph Vehicle,
 
 The web application is designed to streamline Vehicle configuration and deployment, review and approve allocator onboarding, initiate NAV settlement processes, generate reports, and monitor operational and financial activity using a metrics cockpit.
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/alephos-architecture.png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### Features
 
