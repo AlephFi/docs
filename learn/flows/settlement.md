@@ -17,7 +17,7 @@ layout:
 
 # Settlement
 
-**Settlement** is how the Aleph Vault finalizes pending **deposits** and **redemptions** requests. Its purpose is to ensure that everyone in the same settlement cycle gets a fair and consistent price, based on the **Net Asset Value (NAV)** provided by the NAV Engine.
+**Settlement** is how the Vault finalizes pending **deposits** and **redemptions** requests. Its purpose is to ensure that everyone in the same settlement cycle gets a fair and consistent price, based on the **Net Asset Value (NAV)** provided by the NAV Engine.
 
 #### Types of Settlement
 
@@ -41,7 +41,7 @@ The settlement steps occur in the following order:
 
 #### Share price dynamics:
 
-* The **price per share** increases as the vault’s value grows.
+* The **price per share** increases as the vault’s NAV grows.
 * New deposits receive proportionally fewer shares when the NAV is higher.
   * **Example:** An initial deposit of $1 = 1 share. A later deposit of $1 may only mint 0.9 shares if the NAV has increased.
 
@@ -51,12 +51,10 @@ The settlement steps occur in the following order:
 
 <figure><img src="../../.gitbook/assets/settlement-flow-diagram.png" alt="" width="563"><figcaption></figcaption></figure>
 
-
-
-1. **NAV Calculation** \
+1. **NAV Calculation**\
    The NAV engine calculates the total asset value of the vault for a given batch ID across all allocator series.
 2. **Fee Calculation:**\
-   The NAV engine provides the gross NAV for a specific batch ID to the vault smart contract. The Vault contract then computes all applicable fees for the settlement window. These fees are deducted from the gross NAV, resulting in the net NAV used for settlement.&#x20;
+   The NAV engine provides the gross NAV for a specific batch ID to the vault smart contract. The Vault contract then computes all applicable fees for the settlement window. These fees are deducted from the gross NAV, resulting in the net NAV used for settlement.
 3. **Manager Review**\
    The Manager reviews the net NAV to ensure accuracy and consistency before proceeding.
 4. **Settlement Trigger**\
@@ -80,7 +78,7 @@ The process finalizes pending deposit requests over one or more batches, updates
   During settlement, if the Lead Series reaches a new high-water mark and other active series exist, all outstanding series are consolidated into the Lead Series and pending deposits are also settled directly into the Lead Series. If no new high-water mark is set, a separate series is created to settle the pending deposits. For the settled series
   * `totalAssets` increases by the sum of settled deposit amounts.
   * `totalShares` increases by the shares minted for depositors at the momentary PPS.
-* **Funds Movement to Manager Wallet** \
+* **Funds Movement to Manager Wallet**\
   The aggregate underlying received from settled deposits is transferred to the manager wallet in a single transfer per settlement call.
 
 ### Redeem Settlement

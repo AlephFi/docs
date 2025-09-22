@@ -19,6 +19,3 @@ The batch processing cycle consists of two distinct phases: the Request Phase an
    * `settleDeposit(SettlemenParams calldata _settlementParams)` : Shares are minted and allocated to the user to settle deposit requests using updated NAV.&#x20;
    * `settleRedeem(SettlemenParams calldata _settlementParams)` : Tokens are transferred to the user to settle withdrawal requests using updated NAV.&#x20;
 
-***
-
-###

@@ -1,6 +1,6 @@
 # Fees
 
-The fee structure for an Aleph Vehicle is designed to be configurable by managers, with two primary fee types: management fee and performance fee.&#x20;
+The fee structure for an Aleph Vehicle is designed to be configurable by managers, with two primary fee types: management fee and performance fee.
 
 These fees accrue and are processed during the batch settlement cycles, ensuring transparency and accuracy.
 
@@ -37,46 +37,33 @@ if (Price Per Share > HWM) {
 }
 ```
 
-### **Fee Accrual**&#x20;
+### **Fee Accrual**
 
-Fees are accrued during the settlement process. At the end of each batch window, the Oracle provides the necessary pricing inputs to the system. During this process:
+Fees are accrued during the settlement process. At the end of each batch window, the Oracle provides the necessary pricing inputs to the system. Fees are accumulated as shares and are minted to a designated virtual recipient accounts. During this process:
 
-1. Management fees are calculated based on time elapsed and AUM
-2. Performance fees are calculated based on gains above the High-Water Mark
+1. Management fees are calculated based on time elapsed and AUM.
+2. Performance fees are calculated based on gains above the High-Water Mark.
 3. Fee amounts are allocated to special virtual fee recipient addresses:
-   - `MANAGEMENT_FEE_RECIPIENT`: Accumulates management fees
-   - `PERFORMANCE_FEE_RECIPIENT`: Accumulates performance fees
-4. These fees remain as shares until collected
+   * `MANAGEMENT_FEE_RECIPIENT`: accumulates management fees.
+   * `PERFORMANCE_FEE_RECIPIENT`: accumulates performance fees.
+4. These fees remain as shares until collected.
 
 ### **Accountant**
 
-The Accountant is a smart contract that manages the collection and distribution of all accumulated fees across the Aleph protocol. It handles fee splits between vault managers and the Aleph protocol.
+The Accountant is a smart contract that manages the collection and distribution of all fees.&#x20;
 
-#### **Fee Collection Process**
-
-1. **Accumulation:** Fees accumulate as shares allocated to virtual recipient addresses within each vault
+1. **Accumulation:** Fees accumulate as shares allocated to virtual recipient addresses.
 2. **Collection:** The manager triggers fee collection by calling `collectFees()` on the vault
 3. **Transfer:** The vault transfers accumulated fee shares to the Accountant contract
-4. **Distribution:** The Accountant splits fees between:
-   - **Vault Treasury:** Receives the vault's portion of fees (manager's share)
-   - **Aleph Treasury:** Receives the protocol's portion based on configured fee cuts
-
-#### **Fee Splits**
-
-The Accountant maintains configurable fee cuts for each vault:
-- `managementFeeCut`: Percentage of management fees that goes to Aleph protocol (in basis points)
-- `performanceFeeCut`: Percentage of performance fees that goes to Aleph protocol (in basis points)
-
-These cuts are set by the operations multisig and determine how fees are split between the vault manager and Aleph protocol.
+4. **Distribution:** Once accumulated, fee shares can be materialized for the underlying assets of the vault. When requested, the fee shares are burned, and the accountant transfers the amount to the vault treasury.
 
 #### **Treasury Management**
 
-* **Vault Treasury:** Each vault has its own treasury address where the manager's portion of fees is sent
-* **Aleph Treasury:** A global treasury address for all protocol fees
-* **Changing Treasury:** Managers can update their vault treasury by calling `setVaultTreasury()`
+Each vault has its own treasury address where the manager's portion of fees is sent. Managers can define the address of the vault treasury in which they wish to receive the funds. They can do so by calling the `setVaultTreasury` function.
 
 #### **Fee Limits**
 
 To protect investors, the protocol enforces maximum fee limits:
-- Maximum management fee: Defined by `MAXIMUM_MANAGEMENT_FEE` constant
-- Maximum performance fee: Defined by `MAXIMUM_PERFORMANCE_FEE` constant
+
+* Maximum management fee: defined by `MAXIMUM_MANAGEMENT_FEE` constant.
+* Maximum performance fee: defined by `MAXIMUM_PERFORMANCE_FEE` constant.

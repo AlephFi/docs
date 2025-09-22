@@ -1,12 +1,13 @@
 # Aleph Vault
 
-The **Aleph Vault** is a custom smart contract that enables users to participate in off-chain strategies by asynchronously depositing and redeeming on-chain ERC-20 assets. It uses **batch-based settlements**, where an oracle periodically finalizes deposits and redemptions based on updated Net Asset Value (NAV).
+The **Aleph Vault** is a custom set of smart contracts that enables users to participate in off-chain strategies by asynchronously depositing and redeeming from on-chain investment vehicle. It uses **batch-based settlements**, where an oracle periodically finalizes deposits and redemptions based on updated Net Asset Value (NAV).
 
 #### Vault Configuration
 
 Each Aleph Vault is initialized with comprehensive parameters structured in three main categories:
 
 **Core Parameters:**
+
 * `operationsMultisig`: Aleph protocol operations multisig for administrative controls
 * `vaultFactory`: The factory contract that deployed this vault
 * `oracle`: The trusted oracle for NAV updates and settlement operations
@@ -16,6 +17,7 @@ Each Aleph Vault is initialized with comprehensive parameters structured in thre
 * `batchDuration`: The fixed duration of each settlement batch (e.g., hourly, daily)
 
 **User-Provided Parameters:**
+
 * `name`: The name of the vault
 * `configId`: Vault configuration identifier
 * `manager`: Manager role for day-to-day vault operations
@@ -25,6 +27,7 @@ Each Aleph Vault is initialized with comprehensive parameters structured in thre
 * `shareClassParams`: Parameters for the initial share class (fees, limits, periods)
 
 **Module Implementations:**
+
 * `alephVaultDepositImplementation`: Deposit logic module
 * `alephVaultRedeemImplementation`: Redemption logic module
 * `alephVaultSettlementImplementation`: Settlement logic module
@@ -68,6 +71,7 @@ function createShareClass(
 Create a new **share class** with its own fee schedule, periods, and limits. Returns the new `classId`.
 
 **ShareClassParams structure:**
+
 * `managementFee`: Management fee rate in basis points
 * `performanceFee`: Performance fee rate in basis points
 * `noticePeriod`: Notice period in batches for redemptions
@@ -149,6 +153,7 @@ function collectFees() external returns (
 Collect all accumulated management and performance fees. This function is called by the ACCOUNTANT role and transfers fees to both the vault treasury and Aleph treasury based on the configured fee splits.
 
 **Returns:**
+
 * `_managementFeesToCollect`: Total management fees collected
 * `_performanceFeesToCollect`: Total performance fees collected
 
@@ -164,6 +169,7 @@ function unpause(bytes4 _pausableFlow) external;
 ```
 
 Granularly halt/resume specific flows. Available pausable flows:
+
 * `DEPOSIT_REQUEST_FLOW`: Pause new deposit requests
 * `REDEEM_REQUEST_FLOW`: Pause new redemption requests
 * `SETTLE_DEPOSIT_FLOW`: Pause deposit settlements
@@ -186,6 +192,7 @@ function requestDeposit(
 Requests a deposit of underlying assets into a specific share class. Tokens are transferred into the vault and recorded against the current batch. Only one deposit request is allowed per batch per user.
 
 **RequestDepositParams:**
+
 * `classId`: The share class ID to deposit into
 * `amount`: The amount of underlying tokens to deposit
 * `authSignature`: Authentication signature structure (if deposit auth is enabled)
@@ -196,7 +203,7 @@ Returns:
 
 Emits:
 
-* `DepositRequest(address indexed user, uint256 amount, uint48 batchId)`&#x20;
+* `DepositRequest(address indexed user, uint256 amount, uint48 batchId)`
 
 #### settleDeposit
 
@@ -213,6 +220,7 @@ Settles all pending deposits for a specific class by finalizing share distributi
 * Updates total assets and shares
 
 **SettlementParams:**
+
 * `classId`: The share class to settle
 * `toBatchId`: The batch ID to settle up to
 * `newTotalAssets`: Array of updated total assets for each series based on NAV
@@ -231,6 +239,7 @@ function requestRedeem(
 Requests a redemption from a specific share class. The request is recorded against the current batch and processed asynchronously. Underlying assets are made available after settlement.
 
 **RedeemRequestParams:**
+
 * `classId`: The share class ID to redeem from
 * `estAmountToRedeem`: The estimated amount of underlying tokens to redeem
 
@@ -273,6 +282,7 @@ Settles all pending redeem requests for a specific class using the updated NAV. 
 * Makes assets available for withdrawal
 
 **SettlementParams:**
+
 * `classId`: The share class to settle
 * `toBatchId`: The batch ID to settle up to
 * `newTotalAssets`: Array of updated total assets for each series based on NAV
