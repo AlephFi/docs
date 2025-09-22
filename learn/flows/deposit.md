@@ -6,7 +6,7 @@ When allocators deposit their tokens into the vault, they receive **shares** in 
 
 ### Asynchronous Deposit Process
 
-The deposit flow is asynchronous and follows the ERC-7540 standard, meaning tokens are accepted immediately, but shares are only issued (minted) after NAV settlement.&#x20;
+The deposit flow is asynchronous, meaning tokens are accepted immediately, but shares are only issued (minted) after NAV settlement.&#x20;
 
 <figure><img src="../../.gitbook/assets/deposit-lifecycle-overview.png" alt="" width="563"><figcaption></figcaption></figure>
 

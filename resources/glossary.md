@@ -26,9 +26,9 @@ So for example, If you deposited **100 USDC** into a vault and received **100 sh
 
 The base standard for yield-bearing vaults, defining methods for user deposits, withdrawals, asset-to-share conversions, and vault balance tracking. It extends the functionality of the ERC-20 token standard.
 
-#### [ERC-7540](https://eips.ethereum.org/EIPS/eip-7540)
+#### **Asynchronous Vaults**
 
-This standard expands the utility of ERC-4626 Vaults for asynchronous use cases (e.g. real-world asset protocols, off-chain strategies, undercollateralized lending protocols, cross-chain lending protocols).&#x20;
+Vault systems designed for asynchronous deposit and redemption flows, suitable for real-world asset protocols, off-chain strategies, and other use cases where immediate execution is not possible or optimal.
 
 #### **Asynchronous Flow**
 

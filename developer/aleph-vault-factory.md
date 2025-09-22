@@ -1,6 +1,6 @@
 # Aleph Vault Factory
 
-The **AlephVaultFactory** is the entry point for deploying new Aleph Vaults. Each Vault deployed through this factory conforms to the **ERC-7540 standard.**
+The **AlephVaultFactory** is the entry point for deploying new Aleph Vaults. Each Vault deployed through this factory implements Aleph's custom asynchronous vault architecture.
 
 ### Write Methods
 

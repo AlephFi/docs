@@ -1,6 +1,6 @@
 # Aleph Vault
 
-The **Aleph Vault** is an enhanced [ERC-7540](https://eips.ethereum.org/EIPS/eip-7540) compatible smart contract that enables users to participate in off-chain strategies by asynchronously depositing and redeeming on-chain ERC-20 assets. It uses **batch-based settlements**, where an oracle periodically finalizes deposits and redemptions based on updated Net Asset Value (NAV).
+The **Aleph Vault** is a custom smart contract that enables users to participate in off-chain strategies by asynchronously depositing and redeeming on-chain ERC-20 assets. It uses **batch-based settlements**, where an oracle periodically finalizes deposits and redemptions based on updated Net Asset Value (NAV).
 
 #### Vault Configuration
 

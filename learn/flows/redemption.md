@@ -6,7 +6,7 @@ When allocators request a withdrawal by redeeming their shares, they receive a p
 
 ### Asynchronous Redeem Lifecycle
 
-Redemptions are asynchronous and follow the ERC-7540 standard, meaning tokens are transferred after NAV settlement, ensuring fair asset distribution.&#x20;
+Redemptions are asynchronous, meaning tokens are transferred after NAV settlement, ensuring fair asset distribution.&#x20;
 
 <figure><img src="../../.gitbook/assets/redemption-lifecycle-overview.png" alt="" width="563"><figcaption></figcaption></figure>
 
