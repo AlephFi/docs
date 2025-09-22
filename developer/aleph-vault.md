@@ -4,42 +4,78 @@ The **Aleph Vault** is an enhanced [ERC-7540](https://eips.ethereum.org/EIPS/eip
 
 #### Vault Configuration
 
-Each Aleph Vault is initialized with the following key parameters:
+Each Aleph Vault is initialized with comprehensive parameters structured in three main categories:
 
-* `name` : The name of the Vault.
-* `underlyingToken`: The ERC-20 token the vault accepts, also called the **underlying asset**.
-* `configId`: Vault configuration identifier.
-* `custodian`: The address of the **Custodian contract**, where all deposited funds are securely held and further invested off-chain or in external strategies.
-* `manager`: Operations role for day-to-day vault management.
-* `authSigner` : Off-chain KYC attester used when auth is enabled.
-* `batchDuration`: The fixed duration of each settlement batch (e.g., hourly, daily).
+**Core Parameters:**
+* `operationsMultisig`: Aleph protocol operations multisig for administrative controls
+* `vaultFactory`: The factory contract that deployed this vault
+* `oracle`: The trusted oracle for NAV updates and settlement operations
+* `guardian`: Guardian role for emergency pause capabilities
+* `authSigner`: Off-chain KYC attestation signer
+* `accountant`: The accountant contract managing fee collection and distribution
+* `batchDuration`: The fixed duration of each settlement batch (e.g., hourly, daily)
+
+**User-Provided Parameters:**
+* `name`: The name of the vault
+* `configId`: Vault configuration identifier
+* `manager`: Manager role for day-to-day vault operations
+* `underlyingToken`: The ERC-20 token the vault accepts
+* `custodian`: The custodian address where deposited funds are held
+* `vaultTreasury`: Treasury address for vault's portion of collected fees
+* `shareClassParams`: Parameters for the initial share class (fees, limits, periods)
+
+**Module Implementations:**
+* `alephVaultDepositImplementation`: Deposit logic module
+* `alephVaultRedeemImplementation`: Redemption logic module
+* `alephVaultSettlementImplementation`: Settlement logic module
+* `feeManagerImplementation`: Fee management module
+* `migrationManagerImplementation`: Migration and upgrade module
 
 ### Write Methods
 
-#### setIsAuthEnabled
+#### setIsDepositAuthEnabled
 
 ```solidity
-function setIsAuthEnabled(bool _isAuthEnabled) external;
+function setIsDepositAuthEnabled(bool _isDepositAuthEnabled) external;
 ```
 
-Toggle KYC gating. When enabled, off-chain attestations from `authSigner` are enforced by policy.
+Toggle KYC gating for deposits. When enabled, off-chain attestations from `authSigner` are enforced for deposit requests.
 
 **Emits:**
 
-* `IsAuthEnabledSet(bool isAuthEnabled)`
+* `IsDepositAuthEnabledSet(bool isDepositAuthEnabled)`
+
+#### setIsSettlementAuthEnabled
+
+```solidity
+function setIsSettlementAuthEnabled(bool _isSettlementAuthEnabled) external;
+```
+
+Toggle KYC gating for settlements. When enabled, off-chain attestations from `authSigner` are enforced for settlement operations.
+
+**Emits:**
+
+* `IsSettlementAuthEnabledSet(bool isSettlementAuthEnabled)`
 
 #### createShareClass
 
 ```solidity
 function createShareClass(
-    uint32 _managementFee,
-    uint32 _performanceFee,
-    uint256 _minDepositAmount,
-    uint256 _maxDepositCap
+    ShareClassParams memory _shareClassParams
 ) external returns (uint8 _classId);
 ```
 
-Create a new **share class** with its own fee schedule and deposit limits. Returns the new `classId`.
+Create a new **share class** with its own fee schedule, periods, and limits. Returns the new `classId`.
+
+**ShareClassParams structure:**
+* `managementFee`: Management fee rate in basis points
+* `performanceFee`: Performance fee rate in basis points
+* `noticePeriod`: Notice period in batches for redemptions
+* `lockInPeriod`: Lock-in period in batches
+* `minDepositAmount`: Minimum deposit amount
+* `minUserBalance`: Minimum user balance requirement
+* `maxDepositCap`: Maximum deposit cap
+* `minRedeemAmount`: Minimum redemption amount
 
 #### migrateModules
 
@@ -60,10 +96,10 @@ Queue a new management fee for a **class**; becomes settable after timelock via 
 #### setManagementFee
 
 ```solidity
-function setManagementFee() external;
+function setManagementFee(uint8 _classId) external;
 ```
 
-Apply the queued management fee after the timelock.
+Apply the queued management fee after the timelock for the specified class.
 
 **Emits:**
 
@@ -80,42 +116,41 @@ Queue a new performance fee for a **class**.
 #### setPerformanceFee
 
 ```solidity
-function setPerformanceFee() external;
+function setPerformanceFee(uint8 _classId) external;
 ```
 
-Apply the queued performance fee after the timelock.
+Apply the queued performance fee after the timelock for the specified class.
 
 **Emits:**
 
 * `NewPerformanceFeeSet(uint8 classId, uint32 performanceFee)`
 
-#### queueFeeRecipient
+#### setVaultTreasury
 
 ```solidity
-function queueFeeRecipient(address _feeRecipient) external;
+function setVaultTreasury(address _vaultTreasury) external;
 ```
 
-Queue a new `feeRecipient`.
-
-#### setFeeRecipient
-
-```solidity
-function setFeeRecipient() external;
-```
-
-Apply the queued feeRecipient after the timelock.
+Set the vault treasury address where fees are collected. This function is called by the manager role.
 
 **Emits:**
 
-* `NewFeeRecipientSet(address feeRecipient)`
+* `VaultTreasurySet(address vaultTreasury)`
 
 #### collectFees
 
 ```solidity
-function collectFees() external;
+function collectFees() external returns (
+    uint256 _managementFeesToCollect,
+    uint256 _performanceFeesToCollect
+);
 ```
 
-Mint/transfer all accumulated fees to `feeRecipient`.
+Collect all accumulated management and performance fees. This function is called by the ACCOUNTANT role and transfers fees to both the vault treasury and Aleph treasury based on the configured fee splits.
+
+**Returns:**
+* `_managementFeesToCollect`: Total management fees collected
+* `_performanceFeesToCollect`: Total performance fees collected
 
 **Emits:**
 
@@ -128,7 +163,12 @@ function pause(bytes4 _pausableFlow) external;
 function unpause(bytes4 _pausableFlow) external;
 ```
 
-Granularly halt/resume specific flows (e.g., deposits only).
+Granularly halt/resume specific flows. Available pausable flows:
+* `DEPOSIT_REQUEST_FLOW`: Pause new deposit requests
+* `REDEEM_REQUEST_FLOW`: Pause new redemption requests
+* `SETTLE_DEPOSIT_FLOW`: Pause deposit settlements
+* `SETTLE_REDEEM_FLOW`: Pause redemption settlements
+* `WITHDRAW_FLOW`: Pause withdrawal of redeemable amounts
 
 **Emits:**
 
@@ -138,10 +178,17 @@ Granularly halt/resume specific flows (e.g., deposits only).
 #### requestDeposit
 
 ```solidity
-function requestDeposit(uint256 _amount) external returns (uint48 _batchId)
+function requestDeposit(
+    RequestDepositParams calldata _requestDepositParams
+) external returns (uint48 _batchId)
 ```
 
-Requests a deposit of the specified `_amount` of the vault's underlying asset. Tokens are transferred into the vault and recorded against the current batch. Only one deposit request is allowed per batch per user.
+Requests a deposit of underlying assets into a specific share class. Tokens are transferred into the vault and recorded against the current batch. Only one deposit request is allowed per batch per user.
+
+**RequestDepositParams:**
+* `classId`: The share class ID to deposit into
+* `amount`: The amount of underlying tokens to deposit
+* Additional auth parameters if auth is enabled
 
 Returns:
 
@@ -154,23 +201,38 @@ Emits:
 #### settleDeposit
 
 ```solidity
-function settleDeposit(uint256 _newTotalAssets) external;
+function settleDeposit(
+    SettlementParams calldata _settlementParams
+) external;
 ```
 
-Settles all pending deposits by finalizing share distribution based on the updated `newTotalAssets`. This function:
+Settles all pending deposits for a specific class by finalizing share distribution based on the updated NAV. This function:
 
-* Mints shares for users.
-* Transfers deposited tokens to the custodian.
+* Mints shares for users in the appropriate series
+* Transfers deposited tokens to the custodian
+* Updates total assets and shares
 
-This function is typically called by a **trusted oracle.**
+**SettlementParams:**
+* `classId`: The share class to settle
+* `batchId`: The batch ID to settle up to
+* `newTotalAssets`: Updated total assets based on NAV
+* Additional auth parameters if auth is enabled
+
+This function is called by the ORACLE role.
 
 #### requestRedeem
 
 ```solidity
-function requestRedeem(uint256 _shares) external returns (uint48 _batchId);
+function requestRedeem(
+    RedeemRequestParams calldata _redeemRequestParams
+) external returns (uint48 _batchId);
 ```
 
-Requests a redemption of the specified `_shares` of the user. Shares are deducted from the user's balance and recorded against the current batch. Underlying ERC20 assets are transferred to the user after the batch is settled.
+Requests a redemption from a specific share class. The request is recorded against the current batch and processed asynchronously. Underlying assets are made available after settlement.
+
+**RedeemRequestParams:**
+* `classId`: The share class ID to redeem from
+* `shareAmount`: The amount of shares to redeem (as a percentage of total user assets in class, denominated in 1e18)
 
 Returns:
 
@@ -183,15 +245,32 @@ Emits:
 #### settleRedeem
 
 ```solidity
-function settleRedeem(uint256 _newTotalAssets) external;
+function settleRedeem(
+    SettlementParams calldata _settlementParams
+) external;
 ```
 
-Settles all pending redeem requests from the last settled batch to the current one using the updated `newTotalAssets` . This function:
+Settles all pending redeem requests for a specific class using the updated NAV. This function:
 
-* Calculates asset value of shares burned
-* Transfers tokens to users
+* Calculates asset value based on current NAV
+* Burns shares from appropriate series
+* Makes assets available for withdrawal
 
-This function is typically called by a **trusted oracle.**
+**SettlementParams:**
+* `classId`: The share class to settle
+* `batchId`: The batch ID to settle up to
+* `newTotalAssets`: Updated total assets based on NAV
+* Additional auth parameters if auth is enabled
+
+This function is called by the ORACLE role.
+
+#### withdrawRedeemableAmount
+
+```solidity
+function withdrawRedeemableAmount() external;
+```
+
+Withdraws all redeemable assets that have been settled for the user. Transfers the underlying tokens from the vault to the user.
 
 ### Read Methods
 
@@ -211,13 +290,13 @@ function totalAssets() external view returns (uint256)
 
 Returns the latest total value of vault holdings, based on oracle-settled NAV, for all classes / series.
 
-#### totalShares
+#### shareClasses
 
 ```solidity
-function totalShares() external view returns (uint256);
+function shareClasses() external view returns (uint8);
 ```
 
-Returns the total shares outstanding in the vault.
+Returns the number of share classes created in the vault.
 
 #### name
 
@@ -283,13 +362,13 @@ function custodian() external view returns (address);
 
 Custodian address.
 
-#### feeRecipient
+#### vaultTreasury
 
 ```solidity
-function feeRecipient() external view returns (address);
+function vaultTreasury() external view returns (address);
 ```
 
-Current fee recipient.
+Returns the vault treasury address where vault's portion of fees are collected.
 
 #### managementFee
 
@@ -331,13 +410,13 @@ function totalAssetsPerClass(uint8 _classId) external view returns (uint256);
 
 Returns the total assets for a given **class**.
 
-#### totalSharesPerClass
+#### totalAssetsOfClass
 
 ```solidity
-function totalSharesPerClass(uint8 _classId) external view returns (uint256);
+function totalAssetsOfClass(uint8 _classId) external view returns (uint256[] memory);
 ```
 
-Returns the total shares for a given **class**.
+Returns an array of total assets for each series in the given class.
 
 #### totalAssetsPerSeries
 
@@ -453,10 +532,106 @@ function usersToRedeemAt(uint8 _classId, uint48 _batchId) external view returns 
 
 Returns the **list of user addresses** with a **non-zero redemption request** (in shares) in the given **share class** at the specified batch.
 
-#### isAuthEnabled
+#### accountant
 
 ```solidity
-function isAuthEnabled() external view returns (bool);
+function accountant() external view returns (address);
 ```
 
-Returns KYC gate status.
+Returns the accountant contract address responsible for fee management.
+
+#### totalAssetsPerClass
+
+```solidity
+function totalAssetsPerClass(uint8 _classId) external view returns (uint256);
+```
+
+Returns the total assets across all series for a given class.
+
+#### forceRedeem
+
+```solidity
+function forceRedeem(address _user) external;
+```
+
+Allows the manager to force a redemption for a specific user. This is typically used for regulatory compliance or risk management.
+
+#### withdrawExcessAssets
+
+```solidity
+function withdrawExcessAssets() external;
+```
+
+Allows the manager to withdraw any excess assets from the vault back to the custodian. Used to manage vault liquidity.
+
+#### isDepositAuthEnabled
+
+```solidity
+function isDepositAuthEnabled() external view returns (bool);
+```
+
+Returns KYC gate status for deposits.
+
+#### isSettlementAuthEnabled
+
+```solidity
+function isSettlementAuthEnabled() external view returns (bool);
+```
+
+Returns KYC gate status for settlements.
+
+#### noticePeriod
+
+```solidity
+function noticePeriod(uint8 _classId) external view returns (uint48);
+```
+
+Returns the notice period (in batches) required for redemptions in the specified class.
+
+#### lockInPeriod
+
+```solidity
+function lockInPeriod(uint8 _classId) external view returns (uint48);
+```
+
+Returns the lock-in period (in batches) for the specified class.
+
+#### minUserBalance
+
+```solidity
+function minUserBalance(uint8 _classId) external view returns (uint256);
+```
+
+Returns the minimum balance requirement for users in the specified class.
+
+#### minRedeemAmount
+
+```solidity
+function minRedeemAmount(uint8 _classId) external view returns (uint256);
+```
+
+Returns the minimum redemption amount for the specified class.
+
+#### userLockInPeriod
+
+```solidity
+function userLockInPeriod(uint8 _classId, address _user) external view returns (uint48);
+```
+
+Returns the lock-in period end batch for a specific user in a class.
+
+#### redeemableAmount
+
+```solidity
+function redeemableAmount(address _user) external view returns (uint256);
+```
+
+Returns the amount of underlying assets available for withdrawal by the user after redemption settlement.
+
+#### totalFeeAmountToCollect
+
+```solidity
+function totalFeeAmountToCollect() external view returns (uint256);
+```
+
+Returns the total fees (management + performance) available to be collected across all classes.
