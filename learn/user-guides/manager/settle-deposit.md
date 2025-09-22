@@ -4,7 +4,7 @@ The **Settle Deposit** flow is responsible for converting all pending deposit re
 
 **When:** Monthly (or as scheduled by your fund)
 
-<figure><img src="../../../.gitbook/assets/manager-settle-deposit.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/manager-settle-deposit (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### Before You Begin
 
@@ -12,15 +12,15 @@ Make sure the NAV is up to date for the Vault.
 
 {% stepper %}
 {% step %}
-### Open Manager App
+#### Open Manager App
 
 * Go to your **Vault Dashboard**
 * Click the **“Settle Deposit”** button\
-  &#xNAN;_(Only visible if you have permission and there are unsettled deposits)_
+  \&#xNAN;_(Only visible if you have permission and there are unsettled deposits)_
 {% endstep %}
 
 {% step %}
-### Platform Fees Are Accrued
+#### Platform Fees Are Accrued
 
 Before settling the deposits:
 
@@ -29,7 +29,7 @@ Before settling the deposits:
 {% endstep %}
 
 {% step %}
-### Deposits Are Converted Into Vault Shares
+#### Deposits Are Converted Into Vault Shares
 
 For each Allocators:
 
@@ -39,7 +39,7 @@ For each Allocators:
 {% endstep %}
 
 {% step %}
-### Funds Are Transferred to the Custodian
+#### Funds Are Transferred to the Custodian
 
 Once all batches are processed:
 

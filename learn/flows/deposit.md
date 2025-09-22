@@ -6,11 +6,9 @@ When allocators deposit their tokens into the vault, they receive **shares** in 
 
 ### Asynchronous Deposit Process
 
-The deposit flow is asynchronous, meaning tokens are accepted immediately, but shares are only issued (minted) after NAV settlement.&#x20;
+The deposit flow is asynchronous, meaning tokens are accepted immediately, but shares are only issued (minted) after NAV settlement.
 
 <figure><img src="../../.gitbook/assets/deposit-lifecycle-overview.png" alt="" width="563"><figcaption></figcaption></figure>
-
-
 
 The process consists of two phases:
 
@@ -36,8 +34,6 @@ Deposits are asynchronous: the deposit action is instant, but shares are minted 
    - `depositRequestOf(classId, user)`: Total pending deposits across all batches
    - `depositRequestOfAt(classId, user, batchId)`: Deposits for a specific batch
 
-
-
 ### Settle Deposit
 
 Upon settlement, the Oracle calls `settleDeposit` to finalize all queued deposits for a specific class. The number of shares issued is calculated based on the current Net Asset Value (NAV) and total share supply.
@@ -58,4 +54,3 @@ Upon settlement, the Oracle calls `settleDeposit` to finalize all queued deposit
 4. Deposited tokens are transferred to the Custodian address
 5. Management and performance fees are calculated and accrued
 6. Series may be consolidated if conditions are met
-

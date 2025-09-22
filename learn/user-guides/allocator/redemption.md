@@ -8,27 +8,27 @@ Tokens are not transferred immediately. Payouts occur only after the batch settl
 
 {% stepper %}
 {% step %}
-### Open the Vault Dashboard
+#### Open the Vault Dashboard
 
 Go to the Vault you want to withdraw from and Click **“Redeem"**
 {% endstep %}
 
 {% step %}
-### Enter Redemption Amount
+#### Enter Redemption Amount
 
-Input the amount of underlying ERC-20 tokens you want to redeem.&#x20;
+Input the amount of underlying ERC-20 tokens you want to redeem.
 {% endstep %}
 
 {% step %}
-### Submit Transaction
+#### Submit Transaction
 
-Click "**Confirm"** and your wallet will prompt you to sign the transaction.&#x20;
+Click "**Confirm"** and your wallet will prompt you to sign the transaction.
 
-Once signed,  an equivalent percentage of Shares is automatically calculated based on the last settled NAV and recorded in the current redemption batch.
+Once signed, an equivalent percentage of Shares is automatically calculated based on the last settled NAV and recorded in the current redemption batch.
 {% endstep %}
 
 {% step %}
-### Track the withdrawal
+#### Track the withdrawal
 
 Once your transaction is confirmed, Redemption request status is marked as "Pending Settlement".
 
@@ -36,9 +36,9 @@ Once settlement is complete, corresponding ERC-20 tokens will be ready to claim 
 {% endstep %}
 
 {% step %}
-### Withdraw tokens
+#### Withdraw tokens
 
-Once the redeem requests have been settled by the manager, the **“Withdraw Tokens”** option will be enabled in the Allocator App.&#x20;
+Once the redeem requests have been settled by the manager, the **“Withdraw Tokens”** option will be enabled in the Allocator App.
 
 At that point, Click "**Withdraw Tokens"** and your wallet will prompt you to sign the transaction. Your specified underlying ERC-20 tokens will be immediately transferred to your account.
 {% endstep %}

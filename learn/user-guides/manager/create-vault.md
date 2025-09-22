@@ -8,7 +8,7 @@ Vaults in Aleph are deployed on-chain via the **Aleph Vault Factory** using cust
 
 {% stepper %}
 {% step %}
-### Connect Your Wallet
+#### Connect Your Wallet
 
 * Go to the Aleph Manager App.
 * Click **“Connect Wallet”**.
@@ -18,7 +18,7 @@ Vaults in Aleph are deployed on-chain via the **Aleph Vault Factory** using cust
 {% endstep %}
 
 {% step %}
-### Existing Vault Check
+#### Existing Vault Check
 
 Once your wallet is connected:
 
@@ -29,7 +29,7 @@ Once your wallet is connected:
 {% endstep %}
 
 {% step %}
-### Review Your Vault Configuration
+#### Review Your Vault Configuration
 
 The deployment screen will display key details about your Vault:
 
@@ -46,7 +46,7 @@ The deployment screen will display key details about your Vault:
 {% endstep %}
 
 {% step %}
-### Sign the Deployment Transaction
+#### Sign the Deployment Transaction
 
 Once you’ve reviewed your Vault config:
 
@@ -55,11 +55,11 @@ Once you’ve reviewed your Vault config:
 3. After signing, the transaction will be broadcasted to the blockchain.
 4. Once confirmed, your Vault is officially live for Allocators to deposit funds.
 
-> &#x20;Your Vault is now being deployed via the **Aleph Vault Factory** smart contract.
+> Your Vault is now being deployed via the **Aleph Vault Factory** smart contract.
 {% endstep %}
 
 {% step %}
-### Access Your Vault Dashboard
+#### Access Your Vault Dashboard
 
 After successful deployment, you’ll be automatically redirected to your **Vault Dashboard**, where you can:
 
