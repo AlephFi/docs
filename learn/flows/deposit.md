@@ -30,7 +30,7 @@ Deposits are asynchronous: the deposit action is instant, but shares are minted 
 1. Users initiate deposits by calling `requestDeposit` function with:
    - `classId`: The share class to deposit into
    - `amount`: The amount of underlying tokens to deposit
-   - Auth signature (if KYC/auth is enabled)
+   - `authSignature`: AuthSignature structure containing signature bytes and expiry block (if KYC/auth is enabled)
 2. The deposit amount is transferred to the vault and requests are recorded against the current batch
 3. Users can track their pending deposit requests using:
    - `depositRequestOf(classId, user)`: Total pending deposits across all batches
@@ -46,9 +46,9 @@ Upon settlement, the Oracle calls `settleDeposit` to finalize all queued deposit
 
 1. Oracle initiates settlement by calling `settleDeposit` with:
    - `classId`: The share class to settle
-   - `batchId`: The batch to settle up to (excluding current batch)
-   - `newTotalAssets`: Updated NAV from off-chain calculations
-   - Auth signature (if settlement auth is enabled)
+   - `toBatchId`: The batch to settle up to (excluding current batch)
+   - `newTotalAssets`: Array of updated NAV values for each series from off-chain calculations
+   - `authSignature`: Authentication signature (if settlement auth is enabled)
 2. The vault calculates shares to mint based on:
    - Current price per share (NAV / total shares)
    - Deposited amounts for each user
