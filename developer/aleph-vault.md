@@ -232,7 +232,9 @@ Requests a redemption from a specific share class. The request is recorded again
 
 **RedeemRequestParams:**
 * `classId`: The share class ID to redeem from
-* `shareAmount`: The amount of shares to redeem (as a percentage of total user assets in class, denominated in 1e18)
+* `estAmountToRedeem`: The estimated amount of underlying tokens to redeem
+
+**Note:** The amount specified is used to calculate share units based on the price-per-share (PPS) at the moment of request. The actual amount withdrawn after settlement may differ due to NAV changes and fees.
 
 Returns:
 
