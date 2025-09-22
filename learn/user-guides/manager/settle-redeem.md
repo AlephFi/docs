@@ -1,6 +1,6 @@
 # Settle Redeem
 
-The Settle Withdraw flow is responsible for fulfilling user redemption requests by returning ERC-20 tokens and burning their Vault Shares.&#x20;
+The Settle Withdraw flow is responsible for fulfilling user redemption requests by returning ERC-20 tokens and burning their Vault Shares.
 
 **When:** Monthly (or as scheduled by your fund)
 
@@ -8,7 +8,7 @@ The Settle Withdraw flow is responsible for fulfilling user redemption requests 
 
 {% stepper %}
 {% step %}
-### Open Manager App
+#### Open Manager App
 
 * Navigate to your **Vault Dashboard**
 * Click the **“Settle Redeem”** button\
@@ -16,14 +16,14 @@ The Settle Withdraw flow is responsible for fulfilling user redemption requests 
 {% endstep %}
 
 {% step %}
-### Review Settlement NAV
+#### Review Settlement NAV
 
-* Review the proposed settlement NAV&#x20;
+* Review the proposed settlement NAV
 * Approve it to proceed with redemption settlement.
 {% endstep %}
 
 {% step %}
-### Ensure Token Availability
+#### Ensure Token Availability
 
 To ensure the Vault has enough ERC-20 tokens, transfer the required ERC-20 tokens from the Manager wallet back into the Vault.
 
@@ -33,7 +33,7 @@ If the Vault does not have enough tokens, the `settleRedeem()` transaction will 
 {% endstep %}
 
 {% step %}
-### Settlement Process
+#### Settlement Process
 
 When settlement is executed:
 

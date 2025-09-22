@@ -12,7 +12,7 @@ Vault Shares are not issued immediately, they are minted after the batch is sett
 
 {% stepper %}
 {% step %}
-### Go to the Vault Page
+#### Go to the Vault Page
 
 * Navigate to the Vault you want to invest in
 * Click **“Deposit”**
@@ -21,13 +21,13 @@ Vault Shares are not issued immediately, they are minted after the batch is sett
 {% endstep %}
 
 {% step %}
-### **Enter Deposit Amount**
+#### **Enter Deposit Amount**
 
 Input the amount of the accepted ERC-20 token you want to deposit (e.g., USDT, USDC)
 {% endstep %}
 
 {% step %}
-### Confirm & Submit Transaction
+#### Confirm & Submit Transaction
 
 Your wallet will request a signature to approve and send the deposit.
 
@@ -38,7 +38,7 @@ Behind the scenes:
 {% endstep %}
 
 {% step %}
-### Track Deposit Status
+#### Track Deposit Status
 
 After the transaction succeeds, your deposit is now marked as **“Pending Settlement”.**
 

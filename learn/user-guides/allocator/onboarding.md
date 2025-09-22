@@ -8,13 +8,13 @@ Before you can invest in a Vault, you must complete a one-time onboarding proces
 
 {% stepper %}
 {% step %}
-### Visit the Vault Page
+#### Visit the Vault Page
 
 Go to the Vault you wish to invest in and Click **“Start Onboarding”**
 {% endstep %}
 
 {% step %}
-### Complete KYC (Identity Verification)
+#### Complete KYC (Identity Verification)
 
 * A KYC form will open directly inside the page
 * Submit your:
@@ -24,7 +24,7 @@ Go to the Vault you wish to invest in and Click **“Start Onboarding”**
 {% endstep %}
 
 {% step %}
-### Wait for KYC Approval
+#### Wait for KYC Approval
 
 * You will automatically receive an update once your KYC is approved
 * If approved, you’ll proceed to the next step
@@ -32,7 +32,7 @@ Go to the Vault you wish to invest in and Click **“Start Onboarding”**
 {% endstep %}
 
 {% step %}
-### Review & Sign Legal Documents
+#### Review & Sign Legal Documents
 
 Once KYC is approved:
 
@@ -44,7 +44,7 @@ Once KYC is approved:
 {% endstep %}
 
 {% step %}
-### **Await Manager Approval**
+#### **Await Manager Approval**
 
 * After signing, your onboarding profile is sent to the Vault Manager for final review
 * The Manager may:
@@ -55,7 +55,7 @@ Once KYC is approved:
 {% endstep %}
 
 {% step %}
-### Onboarding Complete
+#### Onboarding Complete
 
 Once approved:
 
