@@ -52,9 +52,9 @@ Upon NAV settlement, the Oracle calls `settleRedeem` to finalize all pending red
 
 1. Oracle calls `settleRedeem` with:
    - `classId`: The share class to settle
-   - `batchId`: The batch to settle up to (excluding current batch)
-   - `newTotalAssets`: Updated NAV from off-chain calculations
-   - Auth signature (if settlement auth is enabled)
+   - `toBatchId`: The batch to settle up to (excluding current batch)
+   - `newTotalAssets`: Array of updated NAV values for each series from off-chain calculations
+   - `authSignature`: Authentication signature (if settlement auth is enabled)
 2. For each redeemer:
    - Shares are proportionally deducted from all series they hold
    - The exact amount of underlying tokens is calculated based on current NAV
