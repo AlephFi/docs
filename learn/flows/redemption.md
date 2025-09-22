@@ -12,33 +12,61 @@ Redemptions are asynchronous and follow the ERC-7540 standard, meaning tokens ar
 
 
 
-The process consists of two phases:
+The process consists of multiple phases:
+
+**Important Notes:**
+- Redemptions are processed as a percentage of total user holdings in a class
+- Notice periods may delay when redemptions can be processed
+- Lock-in periods prevent new investors from immediate redemptions
+- Minimum redemption amounts are enforced per share class
+- Redemptions in the current batch are not settled in that cycle (roll to next batch)
+- Settled redemptions must be explicitly withdrawn by users
 
 ### Request Redeem
 
-Allocators initiate a redemption by entering the amount of underlying ERC-20 tokens.
+Allocators initiate a redemption by specifying the portion of their holdings to redeem.
 
 <figure><img src="../../.gitbook/assets/image (9).png" alt="" width="563"><figcaption></figcaption></figure>
 
-
-
-1. The proportional amount of shares are calculated based on the last settled NAV.
-2. The redeem requests are recorded in a batch managed by the Vault.
-3. Users can track their Pending redeem requests using `pendingRedeemRequest`  function.
+1. Users call `requestRedeem` with:
+   - `classId`: The share class to redeem from
+   - `shareAmount`: The percentage of total user assets to redeem (in 1e18 units where 1e18 = 100%)
+2. The redemption request is recorded against the current batch
+3. Important constraints:
+   - Notice period: Users may need to wait a certain number of batches before redemption
+   - Lock-in period: New investors may be locked for a specified number of batches
+   - Minimum redemption amounts apply per class
+4. Users can track their pending redemption requests using:
+   - `redeemRequestOf(classId, user)`: Total pending redemptions across all batches
+   - `redeemRequestOfAt(classId, user, batchId)`: Redemptions for a specific batch
 
 
 
 ### Settle Redeem
 
-Upon NAV settlement, the NAV Engine calls  `settleRedeem` to finalize all pending redemptions.&#x20;
+Upon NAV settlement, the Oracle calls `settleRedeem` to finalize all pending redemptions for a specific class.
 
 <figure><img src="../../.gitbook/assets/image (10).png" alt="" width="563"><figcaption></figcaption></figure>
 
+1. Oracle calls `settleRedeem` with:
+   - `classId`: The share class to settle
+   - `batchId`: The batch to settle up to (excluding current batch)
+   - `newTotalAssets`: Updated NAV from off-chain calculations
+   - Auth signature (if settlement auth is enabled)
+2. For each redeemer:
+   - Shares are proportionally deducted from all series they hold
+   - The exact amount of underlying tokens is calculated based on current NAV
+   - Shares are burned from the appropriate series
+3. Redeemed assets are added to the user's `redeemableAmount` balance
+4. Management and performance fees are calculated and accrued
 
+### Withdraw Redeemable Amount
 
+After settlement, users can withdraw their redeemable assets:
 
+1. Users call `withdrawRedeemableAmount()` to claim all settled redemptions
+2. The vault transfers the underlying tokens from vault to the user
+3. The user's `redeemableAmount` balance is reset to zero
 
-1. The calculated number of shares for each redeemer is burned during settlement.
-2. The Vault calculates the exact amount of tokens each redeemer is entitled to receive.
-3. The corresponding tokens become available for withdrawal by the redeemer.
-4. Users can withdraw the tokens through the Allocator App.
+**Force Redemption:**
+Managers can force redemptions for specific users using `forceRedeem(user)` for regulatory compliance or risk management purposes.

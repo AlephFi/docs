@@ -44,5 +44,33 @@ A secure smart contract responsible for holding the vault's deposited tokens and
 
 #### **Oracle**
 
-Updates the vault NAV for batch settlement by calling `settleDeposit()` or `settleRedeem()`.
+A trusted role that updates the vault NAV for batch settlement by calling `settleDeposit()` or `settleRedeem()` with updated asset values from off-chain calculations.
+
+#### **Share Class**
+
+A distinct category within a vault that has its own fee structure, investment limits, and redemption terms. Each class can have different management fees, performance fees, lock-in periods, and notice periods.
+
+#### **Share Series**
+
+Sub-divisions within a share class created for tracking performance fees and high-water marks. New series are created when new deposits occur after performance fee events.
+
+#### **High-Water Mark (HWM)**
+
+The highest price-per-share a series has achieved, used to ensure performance fees are only charged on new gains above previous peaks.
+
+#### **Accountant**
+
+A protocol-level smart contract that manages fee collection and distribution, splitting fees between vault treasuries and the Aleph protocol treasury.
+
+#### **Batch Duration**
+
+The fixed time period for each settlement batch (e.g., daily, weekly). Deposits and redemptions are processed at the end of each batch period.
+
+#### **Lock-in Period**
+
+The number of batches a new investor must wait before being allowed to redeem their shares, protecting the fund from short-term speculation.
+
+#### **Notice Period**
+
+The number of batches in advance that an investor must request a redemption before it can be processed, allowing managers to prepare for withdrawals.
 
