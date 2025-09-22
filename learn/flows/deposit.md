@@ -10,6 +10,12 @@ The deposit flow is asynchronous, meaning tokens are accepted immediately, but s
 
 <figure><img src="../../.gitbook/assets/deposit-lifecycle-overview.png" alt="" width="563"><figcaption></figcaption></figure>
 
+
+
+***
+
+
+
 The process consists of two phases:
 
 ### Request Deposit
@@ -36,6 +42,8 @@ Deposits are asynchronous: the request is instant, but shares are minted upon NA
 * Maximum deposit caps can be set per class.
 
 
+
+***
 
 ### Settle Deposit
 

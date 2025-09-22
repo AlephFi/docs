@@ -1,6 +1,6 @@
 # Reporting
 
-The **NAV Reporting** includes the complete, auditable package of reports and supporting data generated each settlement cycle. These reports may be exported, reviewed, or shared with stakeholders (allocators, administrators, regulators, auditors).
+The **NAV Reporting** service includes the complete, auditable package of reports and supporting data generated each settlement cycle. These reports may be exported, reviewed, or shared with stakeholders (allocators, administrators, regulators, auditors).
 
 * **Fund Valuation** – Definitive record of the fund’s value at month-end.
 * **Investor Settlements** – Accurate basis for subscriptions, redemptions, and distributions.

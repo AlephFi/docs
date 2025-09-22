@@ -36,8 +36,8 @@ When triggered, the settlement process finalizes all pending batches sequentiall
 
 The settlement steps occur in the following order:
 
-1. Process all pending redemption requests with updated NAV
-2. Process all pending deposit requests with existing NAV
+1. Process all pending redemption requests with updated NAV.
+2. Process all pending deposit requests with existing NAV.
 
 #### Share price dynamics:
 
@@ -50,6 +50,8 @@ The settlement steps occur in the following order:
 ### Settlement Process Flow
 
 <figure><img src="../../.gitbook/assets/settlement-flow-diagram.png" alt="" width="563"><figcaption></figcaption></figure>
+
+
 
 1. **NAV Calculation**\
    The NAV engine calculates the total asset value of the vault for a given batch ID across all allocator series.
@@ -66,6 +68,10 @@ The settlement steps occur in the following order:
     * New shares are **minted** to fulfill deposit requests.
     * Shares are **burnt** to fulfill redemption requests.
 
+
+
+***
+
 ### Deposit Settlement
 
 The process finalizes pending deposit requests over one or more batches, updates the class/series accounting (assets & shares), and transfers the corresponding underlying tokens to the manager wallet.
@@ -80,6 +86,10 @@ The process finalizes pending deposit requests over one or more batches, updates
   * `totalShares` increases by the shares minted for depositors at the momentary PPS.
 * **Funds Movement to Manager Wallet**\
   The aggregate underlying received from settled deposits is transferred to the manager wallet in a single transfer per settlement call.
+
+
+
+***
 
 ### Redeem Settlement
 
@@ -99,6 +109,8 @@ The process finalizes pending redemption requests over one or more batches, appl
 *   **Funds Movement to Allocators**
 
     Once the redemption settlement is completed, the allocators can withdraw the underlying tokens from the Vault.
+
+
 
 ***
 

@@ -10,6 +10,12 @@ Redemptions are asynchronous, meaning tokens are transferred after NAV settlemen
 
 <figure><img src="../../.gitbook/assets/redemption-lifecycle-overview.png" alt="" width="563"><figcaption></figcaption></figure>
 
+
+
+***
+
+
+
 The process consists of multiple phases:
 
 ### Request Redeem
@@ -35,6 +41,10 @@ Allocators initiate a redemption by specifying the portion of their holdings to 
 * Lock-in period: New investors may be locked for a specified number of batches.
 * Minimum redemption amounts may apply per class.
 * The actual amount received after settlement may differ from the requested amount due to NAV changes and fees.
+
+
+
+***
 
 ### Settle Redeem
 

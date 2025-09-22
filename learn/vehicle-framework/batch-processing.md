@@ -13,9 +13,11 @@ The system operates on a batched processing model where user requests are queued
 The batch processing cycle consists of two distinct phases: the Request Phase and the Settlement Phase.
 
 1. **Request Phase:** During this phase, users submit their deposit and redemption requests for the current batch. The following functions are used:
-   * [requestDeposit(RequestDepositParams calldata \_requestDepositParams)](../user-guides/allocator/deposit.md)
-   * [requestRedeem(uint8 \_classId, uint256 \_shareUnits)](../flows/redemption.md)
-2. **Settlement Phase:** This phase begins at the end of the batch window. An oracle calls the settlement functions to finalize all outstanding requests.
-   * `settleDeposit(SettlemenParams calldata _settlementParams)` : Shares are minted and allocated to the user to settle deposit requests using updated NAV.&#x20;
-   * `settleRedeem(SettlemenParams calldata _settlementParams)` : Tokens are transferred to the user to settle withdrawal requests using updated NAV.&#x20;
+   * `requestDeposit(RequestDepositParams calldata _requestDepositParams)`
+   * `requestRedeem(uint8 _classId, uint256 _shareUnits)`
+2. **Settlement Phase:** This phase begins at the end of the batch window. The Oracle calls the settlement functions to finalize all outstanding requests.
+   * `settleDeposit(SettlemenParams calldata _settlementParams)` \
+     Shares are minted and allocated to the user.&#x20;
+   * `settleRedeem(SettlemenParams calldata _settlementParams)` \
+     Tokens are transferred to the user.
 
