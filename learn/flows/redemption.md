@@ -30,9 +30,11 @@ Allocators initiate a redemption by specifying the portion of their holdings to 
 
 1. Users call `requestRedeem` with:
    - `classId`: The share class to redeem from
-   - `shareAmount`: The percentage of total user assets to redeem (in 1e18 units where 1e18 = 100%)
-2. The redemption request is recorded against the current batch
-3. Important constraints:
+   - `estAmountToRedeem`: The estimated amount of underlying tokens to redeem
+2. The system calculates share units based on the current price-per-share (PPS) at the time of request
+3. The redemption request is recorded against the current batch as share units
+4. **Important**: The actual amount received after settlement may differ from the requested amount due to NAV changes and fees
+5. Important constraints:
    - Notice period: Users may need to wait a certain number of batches before redemption
    - Lock-in period: New investors may be locked for a specified number of batches
    - Minimum redemption amounts apply per class
