@@ -8,7 +8,7 @@ When allocators deposit their tokens into the vault, they receive **shares** in 
 
 The deposit flow is asynchronous and follows the ERC-7540 standard, meaning tokens are accepted immediately, but shares are only issued (minted) after NAV settlement.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (59).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/deposit-lifecycle-overview.png" alt="" width="563"><figcaption></figcaption></figure>
 
 
 
@@ -25,7 +25,7 @@ The process consists of two phases:
 
 Deposits are asynchronous: the deposit action is instant, but shares are minted upon NAV settlement.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/deposit-request-flow.png" alt="" width="563"><figcaption></figcaption></figure>
 
 1. Users initiate deposits by calling `requestDeposit` function with:
    - `classId`: The share class to deposit into
@@ -42,7 +42,7 @@ Deposits are asynchronous: the deposit action is instant, but shares are minted 
 
 Upon settlement, the Oracle calls `settleDeposit` to finalize all queued deposits for a specific class. The number of shares issued is calculated based on the current Net Asset Value (NAV) and total share supply.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/deposit-settlement-flow.png" alt="" width="563"><figcaption></figcaption></figure>
 
 1. Oracle initiates settlement by calling `settleDeposit` with:
    - `classId`: The share class to settle

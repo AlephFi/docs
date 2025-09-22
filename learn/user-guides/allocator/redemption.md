@@ -4,7 +4,7 @@ The **Redeem** flow allows you to withdraw from the Vault by redeeming your Vaul
 
 Tokens are not transferred immediately. Payouts occur only after the batch settlement, based on the fund’s current NAV.
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/redemption-user-flow.png" alt="" width="563"><figcaption></figcaption></figure>
 
 {% stepper %}
 {% step %}

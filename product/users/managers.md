@@ -6,7 +6,7 @@ The actor responsible for operating a specific Aleph Vault. Managers offer yield
 
 For Managers, Aleph introduces a new rail for capital formation markets.
 
-<figure><img src="../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/managers-overview.png" alt=""><figcaption></figcaption></figure>
 
 ### Key Details
 

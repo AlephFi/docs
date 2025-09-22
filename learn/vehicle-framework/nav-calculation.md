@@ -4,7 +4,7 @@
 
 NAV Calculation is the process that underpins the [NAV Engine](../../product/aleph-vehicle/nav-engine.md). It converts raw data from trading venues into a verified, per-share valuation of the vault. The process is designed to produce a NAV that is transparent, justifiable, and compliant with the expectations of investors and regulators.
 
-<figure><img src="../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nav-calculation-flow.png" alt=""><figcaption></figcaption></figure>
 
 ### Dual-Method&#x20;
 

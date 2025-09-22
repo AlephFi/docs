@@ -6,7 +6,7 @@ Individual and institutional allocators who deposits digital assets into manager
 
 For Allocator, Aleph enables instant access to institutional yield opportunities.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/allocators-overview.png" alt=""><figcaption></figcaption></figure>
 
 ### Key Details
 
@@ -22,7 +22,7 @@ For Allocator, Aleph enables instant access to institutional yield opportunities
 
 The Allocator web application is a digital storefront for seamless interactions. Through the app, allocators can explore manager performance, deposit assets, redeem their proportional value of the vault, and monitor their multi-strategy portfolio.  &#x20;
 
-<figure><img src="../../.gitbook/assets/image (14) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/allocator-process-flow.png" alt="" width="563"><figcaption></figcaption></figure>
 
 #### Features
 
