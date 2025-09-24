@@ -8,7 +8,7 @@ When allocators deposit their tokens into the vault, they receive **shares** in 
 
 The deposit flow is asynchronous, meaning tokens are accepted immediately, but shares are only issued (minted) after NAV settlement.
 
-<figure><img src="../../.gitbook/assets/deposit-lifecycle-overview.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/Aleph-deposit.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/deposit-lifecycle-overview.png" alt=""></picture><figcaption></figcaption></figure>
 
 
 
@@ -22,7 +22,7 @@ The process consists of two phases:
 
 Deposits are asynchronous: the request is instant, but shares are minted upon NAV settlement.
 
-<figure><img src="../../.gitbook/assets/deposit-request-flow.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/Aleph-deposit-request.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/deposit-request-flow.png" alt=""></picture><figcaption></figcaption></figure>
 
 1. Users initiate deposits by calling `requestDeposit` function with:
    * `classId`: The share class to deposit into.
@@ -49,7 +49,7 @@ Deposits are asynchronous: the request is instant, but shares are minted upon NA
 
 Upon settlement, the Oracle calls `settleDeposit` to finalize all queued deposits for a specific series. The number of shares issued is calculated based on the current NAV and total share supply.
 
-<figure><img src="../../.gitbook/assets/deposit-settlement-flow.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/Aleph-settle-deposit.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/deposit-settlement-flow.png" alt=""></picture><figcaption></figcaption></figure>
 
 1. Manager initiates settle deposit flow using the Oracle by calling `settleDeposit` :
    * `classId`: The share class to settle.

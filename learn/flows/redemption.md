@@ -8,7 +8,7 @@ When allocators request a withdrawal by redeeming their shares, they receive a p
 
 Redemptions are asynchronous, meaning tokens are transferred after NAV settlement, ensuring fair asset distribution.
 
-<figure><img src="../../.gitbook/assets/redemption-lifecycle-overview.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/Aleph-redeem-sequence.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/redemption-lifecycle-overview.png" alt=""></picture><figcaption></figcaption></figure>
 
 
 
@@ -22,7 +22,7 @@ The process consists of multiple phases:
 
 Allocators initiate a redemption by specifying the portion of their holdings to redeem.
 
-<figure><img src="../../.gitbook/assets/redemption-request-flow.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/Aleph-redeem-request.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/redemption-request-flow.png" alt=""></picture><figcaption></figcaption></figure>
 
 1. Users call `requestRedeem` :
    * `classId`: the share class to redeem from.
@@ -50,7 +50,7 @@ Allocators initiate a redemption by specifying the portion of their holdings to 
 
 Upon NAV settlement, the Oracle calls `settleRedeem` to finalize all pending redemptions.
 
-<figure><img src="../../.gitbook/assets/redemption-settlement-flow.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/Aleph-settle-redeem.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/redemption-settlement-flow.png" alt=""></picture><figcaption></figcaption></figure>
 
 1. Oracle calls `settleRedeem` :
    * `classId`: The share class to settle

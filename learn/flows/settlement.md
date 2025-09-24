@@ -49,7 +49,7 @@ The settlement steps occur in the following order:
 
 ### Settlement Process Flow
 
-<figure><img src="../../.gitbook/assets/settlement-flow-diagram.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/Aleph-settle-sequence.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/settlement-flow-diagram.png" alt=""></picture><figcaption></figcaption></figure>
 
 
 
