@@ -47,6 +47,6 @@
 * [Audits](resources/audits.md)
 * [Legal](resources/legal/README.md)
   * [Terms and Conditions](resources/legal/terms-and-conditions.md)
-  * [Privay Policy](resources/legal/privay-policy.md)
+  * [Privacy Policy](resources/legal/privay-policy.md)
   * [Disclaimers](resources/legal/copy-of-disclaimers.md)
 * [Glossary](resources/glossary.md)
