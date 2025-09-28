@@ -1,8 +1,4 @@
----
-hidden: true
----
-
-# Copy of Disclaimers
+# Disclaimers
 
 ## Risk Disclaimer&#x20;
 
