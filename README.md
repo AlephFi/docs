@@ -22,7 +22,7 @@ layout:
 
 # Intro
 
-Aleph is a financial infrastructure for uncorrelated yield strategies, connecting digital asset allocators with institutional money managers.
+Aleph is a financial infrastructure that connects digital asset allocators with institutional money managers.
 
 We build a secure, transparent, and efficient marketplace that enables allocators to instantly access money managers with diversified alpha strategies, while maintaining the key controls expected in traditional finance.
 
