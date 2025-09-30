@@ -16,7 +16,7 @@ You must be able to form a legally binding contract online either on behalf of a
 
 (b) you are at least 18 years old (or the age of majority where you reside, whichever is older), can form a legally binding contract online, and have the full, right, power and authority to enter into and to comply with the obligations under these Terms.
 
-In addition, you also represent and warrant that you are not a citizen or resident of a state, country, territory or other jurisdiction that is embargoed by the United States or where your use of the Portal or the Services would be illegal or otherwise violate any applicable law. Specifically, you represent that you are not located in, organized in, or a resident of New York, Cuba, Iran, Syria, North Korea, the Crimea region, Venezuela, or any other jurisdiction where Applicable law prohibits you from accessing or using the Services; and you represent that you are not named on the Office of Foreign Asset Control of the U.S. Department of the Treasury’s Specially Designated and Blocked Persons List.
+In addition, you also represent and warrant that you are not a citizen or resident of a state, country, territory or other jurisdiction that is embargoed by the United States or where your use of the Portal or the Services would be illegal or otherwise violate any applicable law. Specifically, you represent that you are not located in, organized in, or a resident of Cuba, Iran, Syria, North Korea, the Crimea region, Venezuela, or any other jurisdiction where Applicable law prohibits you from accessing or using the Services; and you represent that you are not named on the Office of Foreign Asset Control of the U.S. Department of the Treasury’s Specially Designated and Blocked Persons List.
 
 ***
 
