@@ -22,13 +22,11 @@ layout:
 
 # Intro
 
-Aleph is a financial infrastructure that connects digital asset allocators with institutional funds.
+Aleph brings institutional funds into open finance.&#x20;
 
-Aleph is a financial infrastructure that brings institutional funds into open finance while preserving&#x20;
+We build a secure, transparent, and efficient infrastructure that enables allocators to instantly access institutional money managers with diversified yield strategies, while maintaining the key controls expected in traditional finance.
 
-We build a secure, transparent, and efficient marketplace that enables allocators to instantly access money managers with diversified alpha strategies, while maintaining the key controls expected in traditional finance.
-
-Designed for asset managers, digital asset funds, and accredited allocators, Aleph's blockchain-based architecture streamlines complex on-chain and off-chain tasks, eliminates bureaucratic frictions, reduces operational costs, and enhances capital efficiency.
+Designed for asset managers, digital asset funds, and accredited allocators, Aleph's blockchain-based architecture streamlines complex on-chain and off-chain tasks, eliminates bureaucratic frictions, reduces operational costs, and enhances capital formation.
 
 ### Who is Aleph for?
 
@@ -38,5 +36,5 @@ Institutional funds that generate yield from economic activities outside the clo
 
 **Allocators**
 
-Crypto natives, high-net-worth individuals, foundations, fund of funds, family offices, and private placement funds. They pursue over-performing, risk-adjusted returns.
+Accredited investors, foundations, fund of funds, family offices, and private placement funds. They pursue over-performing, risk-adjusted returns.
 

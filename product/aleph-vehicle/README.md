@@ -1,8 +1,6 @@
 # Aleph Vehicle
 
-**Aleph Vehicle** is a fund management system that introduces a highly flexible investment instrument with built-in compliance. The system is designed to meet diverse operational and regulatory requirements, handle allocator onboarding and subscription, and accept stablecoins from allocators across jurisdictions.&#x20;
-
-Aleph Vehicle is composed of three vertically-integrated layers:&#x20;
+The system is designed to manage allocator lifecycle, handle diverse fund operations, and meet regulatory requirements through three vertically-integrated layers:&#x20;
 
 ### **Aleph Vaults**
 

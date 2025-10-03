@@ -10,7 +10,7 @@ Each Aleph Vault is initialized with comprehensive parameters structured in thre
 
 * `operationsMultisig`: Aleph protocol operations multisig for administrative controls
 * `vaultFactory`: The factory contract that deployed this vault
-* `oracle`: The trusted oracle for NAV updates and settlement operations
+* `oracle`: The oracle for NAV updates and settlement operations
 * `guardian`: Guardian role for emergency pause capabilities
 * `authSigner`: Off-chain KYC attestation signer
 * `accountant`: The accountant contract managing fee collection and distribution
@@ -20,7 +20,7 @@ Each Aleph Vault is initialized with comprehensive parameters structured in thre
 
 * `name`: The name of the vault
 * `configId`: Vault configuration identifier
-* `manager`: Manager role for day-to-day vault operations
+* `manager`: Manager role for vault operations
 * `underlyingToken`: The ERC-20 token the vault accepts
 * `custodian`: The custodian address where deposited funds are held
 * `vaultTreasury`: Treasury address for vault's portion of collected fees
