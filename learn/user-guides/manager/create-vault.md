@@ -2,7 +2,7 @@
 
 Vaults in Aleph are deployed on-chain via the **Aleph Vault Factory** using custom configurations by the Manager. This guide walks through the full deployment process initiated from the **Manager App UI**, including wallet connection, configuration validation, on-chain deployment.
 
-<figure><img src="../../../.gitbook/assets/vault-setup-flow.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../../.gitbook/assets/Aleph-create-vault.png" media="(prefers-color-scheme: dark)"><img src="../../../.gitbook/assets/vault-setup-flow.png" alt=""></picture><figcaption></figcaption></figure>
 
 ### Vault Deployment Flow
 

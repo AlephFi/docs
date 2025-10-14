@@ -4,7 +4,7 @@ The Settle Withdraw flow is responsible for fulfilling user redemption requests 
 
 **When:** Monthly (or as scheduled by your fund)
 
-<figure><img src="../../../.gitbook/assets/manager-settle-redeem.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../../.gitbook/assets/Aleph-settle-redeem (1).png" media="(prefers-color-scheme: dark)"><img src="../../../.gitbook/assets/manager-settle-redeem.png" alt=""></picture><figcaption></figcaption></figure>
 
 {% stepper %}
 {% step %}
