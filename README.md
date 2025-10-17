@@ -24,7 +24,7 @@ layout:
 
 Aleph brings institutional funds into open finance.&#x20;
 
-We build a secure, transparent, and efficient infrastructure that enables allocators to instantly access institutional money managers with diversified yield strategies, while maintaining the key controls expected in traditional finance.
+We build a secure, transparent, and efficient infrastructure that enables allocators to instantly access institutional asset managers with diversified yield strategies, while maintaining the key controls expected in traditional finance.
 
 Designed for asset managers, digital asset funds, and accredited allocators, Aleph's blockchain-based architecture streamlines complex on-chain and off-chain tasks, eliminates bureaucratic frictions, reduces operational costs, and enhances capital formation.
 
