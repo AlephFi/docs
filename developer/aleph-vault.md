@@ -1,7 +1,5 @@
 # Aleph Vault
 
-The **Aleph Vault** is a custom set of smart contracts that enables users to participate in off-chain strategies by asynchronously depositing and redeeming from on-chain investment vehicle. It uses **batch-based settlements**, where an oracle periodically finalizes deposits and redemptions based on updated Net Asset Value (NAV).
-
 #### Vault Configuration
 
 Each Aleph Vault is initialized with comprehensive parameters structured in three main categories:
