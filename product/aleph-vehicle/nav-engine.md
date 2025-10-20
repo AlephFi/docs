@@ -1,4 +1,12 @@
+---
+hidden: true
+---
+
 # NAV Engine
+
+### NAV Engine&#x20;
+
+Responsible for calculating the Net Asset Value (NAV). The system fetches raw data from off-chain trading venues, applies valuation and fee logic, and publishes results on-chain to settle deposits and redemptions.
 
 ### Overview
 
@@ -6,7 +14,7 @@ The NAV Engine is a customized Oracle service responsible for calculating the Ne
 
 <figure><img src="../../.gitbook/assets/nav-engine-architecture.png" alt=""><figcaption></figcaption></figure>
 
-The NAV Engine is designed to provide both managers and allocators with the highest standards of accuracy and auditability. Calculations are based on reconciled balances, market prices, and position valuations across multiple trading venues.&#x20;
+The NAV Engine is designed to provide both managers and allocators with the highest standards of accuracy and auditability. Calculations are based on reconciled balances, market prices, and position valuations across multiple trading venues.
 
 **Indicative NAV (iNAV)**
 
@@ -14,7 +22,7 @@ On-demand NAV estimate for monitoring, dashboards, and indicative pricing. The i
 
 **Settlement NAV**
 
-The per-share NAV used to settle deposits, redemptions, and fees. Managers initiate the NAV settlement process through AlephOS for final approval, where Aleph Vaults handle capital distribution and mint/burn shares.   &#x20;
+The per-share NAV used to settle deposits, redemptions, and fees. Managers initiate the NAV settlement process through AlephOS for final approval, where Aleph Vaults handle capital distribution and mint/burn shares.
 
 ### Features
 
@@ -23,5 +31,4 @@ The per-share NAV used to settle deposits, redemptions, and fees. Managers initi
 * **Validation:** A predefined set of validation rules is applied to the calculated NAV to ensure accuracy and consistency.
 * **Fee Logic:** management fees applied pro rata per time elapsed, performance fees applied above per-series high-water marks.
 * **Settlement Triggering:** publishes Final NAV to vault contracts and initiates batch settlement of deposits and redemptions.
-* **Transparency:** NAV publications, fee accrual, and settlement are logged on-chain for independent verification.&#x20;
-
+* **Transparency:** NAV publications, fee accrual, and settlement are logged on-chain for independent verification.

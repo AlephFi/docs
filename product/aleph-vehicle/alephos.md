@@ -2,7 +2,7 @@
 
 ### Overview
 
-AlephOS is the primary console for fund managers and admins of an Aleph Vehicle, leveraging an intuitive interface that translates complex on-chain and off-chain operations into actionable tasks.
+AlephOS is the primary console for asset managers and admins, leveraging an intuitive interface that translates complex on-chain and off-chain operations into actionable tasks.
 
 The web application is designed to streamline Vehicle configuration and deployment, review and approve allocator onboarding, initiate NAV settlement processes, generate reports, and monitor operational and financial activity using a metrics cockpit.
 

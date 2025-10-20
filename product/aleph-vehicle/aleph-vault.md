@@ -2,9 +2,7 @@
 
 ### Overview
 
-Aleph Vault tokenizes off-chain yield strategies into asynchronous vaults, deriving their value from the underlying NAV. The system simplifies complex operations for managers and allocators, handles whitelisting, subscriptions, Classes and Series, HWM, fee accrual, and capital distribution.
-
-<figure><picture><source srcset="../../.gitbook/assets/Aleph-highlevel.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/aleph-vault-architecture.png" alt=""></picture><figcaption></figcaption></figure>
+Aleph Vaults tokenize yield strategies into asynchronous vaults, deriving their value from the underlying NAV. The system simplifies complex operations for managers and allocators, handles whitelisting, subscriptions, Classes and Series, HWM, fee accrual, and capital distribution.
 
 ### Features
 
