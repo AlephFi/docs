@@ -5,7 +5,7 @@ The system operates on a batched processing model where user requests are queued
 #### Batch Structure and Rules
 
 * Batch ID: A unique, incrementing `batchId` identifies each batch.
-* Request Limits: Each Allocator is limited to submitting one deposit and one redemption request per share class per batch.
+* Request Limits: Each allocator is limited to submitting one deposit and one redemption request per share class per batch.
 * Settlement Order: Outstanding batches are always settled in strict chronological order, from oldest to newest. The system will not process the current batch until all previous batches have been settled.
 
 ### Batch Processing

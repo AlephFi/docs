@@ -10,10 +10,9 @@ A Share Class defines the participation terms for a group of allocators within a
 
 #### Key Characteristics:
 
-* Economic Terms: Each share class holds unique fee parameters.
-* Controls: Classes can be configured with specific deposit requirements.
-* Distinction: Allows for offering different terms to various types of allocators.
-* Incentive: Can be used to create promotional or incentive-based fee arrangements for specific cohorts of investors.
+* Each share class holds unique economic terms.
+* Classes can be configured with specific deposit requirements.
+* Allows for offering different terms to various types of allocators, and can be used to create promotional or incentive-based fee arrangements for specific cohorts of investors.
 
 ### Series&#x20;
 
@@ -32,8 +31,8 @@ The High-Water Mark (HWM) is the price-per-share (PPS) threshold that a series m
 
 An additional series is automatically created during the settlement process only when all of the following conditions are met:
 
-1. The share class has a non-zero performance fee. (also called and incentive class)
-2. The lead series' current PPS is below its HWM (i.e., the lead series has not reached a new high watermark).
+1. The share class has a non-zero performance fee.
+2. The lead series' current PPS is below its HWM.
 3. There are new pending deposits to settle in the current cycle.
 
 #### **Consolidation Logic**

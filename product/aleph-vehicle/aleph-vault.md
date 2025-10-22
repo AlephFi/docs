@@ -2,7 +2,7 @@
 
 ### Overview
 
-Aleph Vaults tokenize yield strategies into asynchronous vaults, deriving their value from the underlying NAV. The system simplifies complex operations for managers and allocators, handles whitelisting, subscriptions, Classes and Series, HWM, fee accrual, and capital distribution.
+Aleph Vaults tokenize yield strategies into non-transferable fund shares, deriving their value from the underlying NAV. The system simplifies complex operations for managers and allocators, handles whitelisting, subscriptions, Classes and Series, HWM, fee accrual, and capital distribution.
 
 ### Features
 
@@ -15,10 +15,11 @@ Aleph Vaults tokenize yield strategies into asynchronous vaults, deriving their 
 
 Allocators apply to access through a digital storefront that simplifies the onboarding process, from KYC to deposit request:
 
-1. **Initiate:** Internet-native KYC/AML process embedded in-app.
+1. **Initiate:** Digital KYC/AML process embedded in-app.
 2. **Submit:** Allocators submit the required documents for manager approval.
-3. **Confirmation:** Manager approves or rejects the allocator request via AlephOS.
-4. **Sign Agreement:** Allocators sign the subscription agreement, becoming eligible to deposit.
+3. **Confirmation:** Manager approves or&#x20;
+4. rejects the allocator request via AlephOS.
+5. **Sign Agreement:** Allocators sign the subscription agreement, becoming eligible to deposit.
 
 #### **Deposit and Redemption**
 
@@ -37,7 +38,7 @@ Aleph Vaults operate on a settlement-based system; deposits/redemptions are sett
 1. Manager deploys a vault with customized key controls.
 2. Allocator submits KYC/AML and onboarding documents.
 3. Once approved, allocator initiates a deposit request.
-4. Manager initiates a settle deposit flow, NAV Engine computes the new NAV.
+4. Manager initiates a settle deposit flow using an updated NAV figure.
 5. Depoisted assets are transferred and the allocator receives **shares** proportional to the vault AUM.
 6. Manager runs yield strategies.
 7. Upon redemption request, the manager initiates a settle redemption flow, collects fees, computes the new NAV.

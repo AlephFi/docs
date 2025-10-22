@@ -25,16 +25,15 @@ The web application is designed to streamline Vehicle configuration and deployme
 #### **Deployment and Configuration**
 
 * Set up a new Aleph Vault instance with custom parameters.
-* Connect multiple trading venues to NAV Engine by uploading API keys.
 * Configure key controls such as fee logic, class parameters, minimum ticket, and notice period.
 * Configure KYC/AML workflows.
 * Upload subscription agreement.
 
 #### **Onboarding**
 
-* Manage LPA/KYC compliance documents.
 * Review and approve allocators onboarding.
 * Review deposit and redemption requests.
+* Manage compliance documents.
 
 #### Settlement
 

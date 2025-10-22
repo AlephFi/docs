@@ -2,9 +2,7 @@
 
 ### Overview
 
-Individual and institutional allocators who deposits digital assets into manager Vault. Allocators complete KYC/AML, sign an agreement, and are approved by the Manager before deposits.
-
-For Allocator, Aleph enables instant access to institutional yield opportunities.
+Individual and institutional allocators who deposits digital assets into manager Vault. For Allocator, Aleph enables instant access to institutional yield opportunities.
 
 <figure><img src="../../.gitbook/assets/allocators-overview.png" alt=""><figcaption></figcaption></figure>
 

@@ -2,7 +2,7 @@
 
 #### Vault Configuration
 
-Each Aleph Vault is initialized with comprehensive parameters structured in three main categories:
+Each Aleph Vault is initialized with parameters structured in three main categories:
 
 **Core Parameters:**
 
