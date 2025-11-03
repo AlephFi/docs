@@ -17,9 +17,8 @@ Allocators apply to access through a digital storefront that simplifies the onbo
 
 1. **Initiate:** Digital KYC/AML process embedded in-app.
 2. **Submit:** Allocators submit the required documents for manager approval.
-3. **Confirmation:** Manager approves or&#x20;
-4. rejects the allocator request via AlephOS.
-5. **Sign Agreement:** Allocators sign the subscription agreement, becoming eligible to deposit.
+3. **Confirmation:** Manager approves or rejects the allocator request via AlephOS.
+4. **Sign Agreement:** Allocators sign the subscription agreement, becoming eligible to deposit.
 
 #### **Deposit and Redemption**
 
