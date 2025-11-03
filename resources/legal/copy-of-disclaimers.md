@@ -52,11 +52,9 @@ Managers may invest in CeFi platforms and DeFi protocols that may have their own
 
 ## Investment Disclaimer&#x20;
 
-_Not for the distribution to any U.S. Person or any person or address in the United States. Aleph DOES NOT sell tokens to U.S. Persons or for the account or benefit of U.S. Persons, and tokens are not marketed or solicited in the U.S. or in any other prohibited jurisdiction._&#x20;
-
 _These materials are not an offer of or an invitation by or on behalf of Othentic Labs Ltd. (the Company) or any other person to subscribe for or to purchase any products of the Company. These materials are for background purposes only and do not purport to be complete._
 
-_No reliance may be placed for any purpose on the information contained in these materials or its accuracy or completeness. The information in these materials is subject to change. Charts and graphs are provided for illustrative purposes. Past performance is not indicative of, and does not guarantee future results. Investing in digital assets including crypto assets is not suitable for every investor as there is a substantial risk of loss, and losses in excess of an initial investment may under certain circumstances occur. Engaging in blockchain transactions and with DeFi protocols involves risks._
+_No reliance may be placed for any purpose on the information contained in these materials or its accuracy or completeness. The information in these materials is subject to change. Charts and graphs are provided for illustrative purposes. Past performance is not indicative of, and does not guarantee future results. Investing in digital assets including crypto assets is not suitable for every investor as there is a substantial risk of loss, and losses in excess of an initial investment may under certain circumstances occur. Engaging in blockchain transactions and with DeFi protocols involves risks. Not for the distribution to any U.S. Person or any person or address in the United States. Aleph DOES NOT sell tokens to U.S._
 
 _The value of an investment in a Vault however may not perfectly reflect or track the value of the Underlying. At any time, the price at which any Underlying trades on exchanges, regulated or unregulated markets within the EEA or abroad or any other exchange or market on which they may be quoted or traded may not accurately be reflected in changes to the value or price of the product._
 
