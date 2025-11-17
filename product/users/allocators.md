@@ -1,8 +1,8 @@
-# Allocators
+# Restakers
 
 ### Overview
 
-Individual and institutional allocators who deposits digital assets into manager Vault. For Allocator, Aleph enables instant access to institutional yield opportunities.
+Deposits restaked assets into Vault. For Allocator, Aleph enables access to institutional yield opportunities via EigenLayer&#x20;
 
 <figure><img src="../../.gitbook/assets/allocators-overview.png" alt=""><figcaption></figcaption></figure>
 
@@ -24,11 +24,8 @@ The Allocator web application is a digital storefront for seamless interactions.
 
 #### Features
 
-* **Discovery** - Browse available managers with detailed performance metrics.
+* **Discovery** - Browse available vaults with detailed performance metrics.
 * **Onboarding** - Internet-native and instant onboarding application.
 * **Portfolio** - Monitor multi-manager portfolio with live financial metrics.
 * **Transparency** - Auditable trail of NAV updates, settlements, and capital distribution.
 
-### Verification
-
-KYC/AML, liveliness check, and subscription agreement are processed through the Allocator App and approved by the manager through AlephOS. This process includes credentials and information, including jurisdiction, source of capital, source of wealth, source of funds, directors, significant controllers, and letters of authorization.

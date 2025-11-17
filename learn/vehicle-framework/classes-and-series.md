@@ -1,26 +1,10 @@
-# Classes & Series
+# Series
 
-Aleph Vaults are designed to accommodate a diverse range of allocator economic terms through a two-tiered structure: **Classes and Series.**&#x20;
-
-This design enables managers to offer distinct terms to different allocator groups while ensuring fair and accurate fee calculations based on each investor's unique entry point.
-
-### Classes
-
-A Share Class defines the participation terms for a group of allocators within an Aleph Vehicle. Each class operates under its own set of rules, allowing for customized fee structures and investment parameters.
-
-#### Key Characteristics:
-
-* Each share class holds unique economic terms.
-* Classes can be configured with specific deposit requirements.
-* Allows for offering different terms to various types of allocators, and can be used to create promotional or incentive-based fee arrangements for specific cohorts of investors.
-
-### Series&#x20;
-
-A Series is a sub-division within a share class that groups investors by their entry cohort. The primary purpose of a series is to ensure that Performance fees are calculated only on the gains an investor has actually accrued since inception. This is accomplished by maintaining a unique High-Water Mark (HWM) for each series.
+The primary purpose of a series is to ensure that Performance fees are calculated only on the gains an investor has actually accrued since inception. This is accomplished by maintaining a unique High-Water Mark (HWM) for each series.
 
 #### High-Water Mark (HWM)
 
-The High-Water Mark (HWM) is the price-per-share (PPS) threshold that a series must exceed before any performance fee can be charged. If the current PPS is less than or equal to the series' HWM, no performance fee is accrued for that series.
+The High-Water Mark (HWM) is the price-per-share (PPS) threshold that a series must exceed before any performance fee can be charged. If the current PPS is equal to or less than the series' HWM, no performance fee is accrued for that series.
 
 #### Types of Series
 

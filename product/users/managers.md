@@ -1,8 +1,8 @@
-# Managers
+# Curators
 
 ### Overview
 
-Managers offer yield strategies to allocators, leveraging proprietary expertise to generate uncorrelated returns. For Managers, Aleph introduces a new rail for capital formation markets.
+Offer LST strategies to Restakers, leveraging proprietary expertise to generate uncorrelated returns.
 
 <figure><img src="../../.gitbook/assets/managers-overview.png" alt=""><figcaption></figcaption></figure>
 
