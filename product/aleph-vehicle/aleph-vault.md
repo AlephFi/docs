@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Aleph Vault
 
 ### Overview
