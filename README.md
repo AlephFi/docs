@@ -1,5 +1,5 @@
 ---
-cover: .gitbook/assets/Screenshot 2025-11-17 at 9.57.48.png
+cover: .gitbook/assets/aleph-cover-banner.png
 coverY: 0
 layout:
   width: default
@@ -22,17 +22,19 @@ layout:
 
 # Intro
 
-Aleph enables institutional-grade yield for EigenLayer restakers.
+Aleph brings institutional funds into open finance.&#x20;
 
-We build a secure and efficient infrastructure that enables restakers to access vaults with diversified yield strategies, while maintaining the core AVS security operations.
+We build a secure and efficient infrastructure that enables allocators to instantly access leading asset managers with diversified yield strategies, while maintaining the key controls expected in traditional finance.
+
+Designed for digital asset funds and accredited allocators, Aleph's blockchain-based architecture streamlines complex on-chain and off-chain tasks, eliminates bureaucratic frictions, reduces operational costs, and enhances capital formation.
 
 ### Who is Aleph for?
 
-**Restakers**&#x20;
+**Managers**&#x20;
 
-Stake their Liquid Staking Tokens (LST) in EigenLayer and delegate the collateral to Aleph AVS.&#x20;
+Institutional funds that generate yield from economic activities outside the closed loop of on-chain protocols, where the key profit drivers are liquidity depth, market structure, risk management, fundemental analysis, latency, and proprietary alpha-generating models.
 
-**Curators**
+**Allocators**
 
-Professional risk managers who execute institutional-grade DeFi strategies to generate yield on LST.&#x20;
+Accredited investors, foundations, fund of funds, family offices, and private placement funds. They pursue over-performing, risk-adjusted returns.
 

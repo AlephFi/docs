@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Reporting
 
 The **NAV Reporting** service includes the complete, auditable package of reports and supporting data generated each settlement cycle. These reports may be exported, reviewed, or shared with stakeholders (allocators, administrators, regulators, auditors).

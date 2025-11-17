@@ -1,8 +1,8 @@
-# Vault
+# Aleph Vault
 
 ### Overview
 
-The system simplifies complex operations for restakers and curators, handles onboarding, Series, HWM, fee accrual, and capital distribution.
+Aleph Vaults wrap yield strategies into non-transferable fund shares that derive their value from the underlying NAV. The system simplifies complex operations for managers and allocators, handles whitelisting, subscriptions, Classes and Series, HWM, fee accrual, and capital distribution.
 
 ### Features
 
